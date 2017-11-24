@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dac828c-cc88-4aee-99e4-f3b277cfc979" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Add Two Numbers.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/First Missing Positive.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Fizz Buzz.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Judge Route Circle.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Linked List Cycle II.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Linked List Cycle.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Merge Sorted Array.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Remove Duplicates from Sorted Array.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Reverse Linked List.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Reverse Nodes in k-Group.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Reverse String.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Rotate Function.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Rotate Image.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Sort Colors.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Two Sum.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Valid Anagram.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Valid Palindrome.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,6 +52,7 @@
         <option value="$PROJECT_DIR$/Sort Colors.py" />
         <option value="$PROJECT_DIR$/Remove Duplicates from Sorted Array.py" />
         <option value="$PROJECT_DIR$/Rotate Image.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -434,6 +420,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="95" lean-forward="false" selection-start-line="5" selection-start-column="95" selection-end-line="5" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aa.xmx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
