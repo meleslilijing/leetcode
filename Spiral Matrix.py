@@ -1,4 +1,4 @@
-
+# next point
 
 class Solution(object):
     def spiralOrder(self, matrix):
@@ -6,41 +6,60 @@ class Solution(object):
         :type matrix: List[List[int]]
         :rtype: List[int]
         """
-        direction = 'right'
-        s = set()
         result = []
 
-        i = 0
-        cur = [0, 0]
-        while i < len(matrix) * len(matrix[0]):
-            self.append(result, matrix, cur)
-            next = self.step(cur, direction)
+        if matrix is None or len(matrix) == 0 or len(matrix[0]) == 0:
+            return result
 
-            i += 1
+        n, m = len(matrix), len(matrix[0])
+        row, col = 0, -1
+
+        while True:
+            for i in range(m):
+                col += 1
+                result.append(matrix[row][col])
+            n -= 1
+
+            if n == 0:
+                break
+
+            for i in range(n):
+                row += 1
+                result.append(matrix[row][col])
+            m -= 1
+
+            if m == 0:
+                break
+
+            for i in range(m):
+                col -= 1
+                result.append(matrix[row][col])
+
+            n -= 1
+            if n == 0:
+                break
+
+            for i in range(n):
+                row -= 1
+                result.append(matrix[row][col])
+
+            m -= 1
+            if m == 0:
+                break
+
+        return result
 
 
 
-    def append(self, list, matrix, point):
-        x, y = point[0], point[1]
-        list.append(matrix[x][y])
-        matrix[x][y] = None
+def main():
+    matrix = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ]
 
-    def step(self, p, direction):
-        s = {
-            'up': [0, -1],
-            'down': [0, 1],
-            'left': [-1, 0],
-            'right': [1, 0]
-        }[type]
-
-        x, y = p[0] + s[0], p[1] + s[1]
-        return [x, y]
+    solution = Solution()
+    print(solution.spiralOrder(matrix))
 
 
-    def turnRight(self, type):
-        return {
-            'left': 'up',
-            'up': 'right',
-            'right': 'down',
-            'down': 'left'
-        }[type]
+main()
