@@ -15,16 +15,25 @@ class Solution(object):
         nodeList = []
         self.inorderTravel(root, nodeList)
 
+        first, second = None, None
+
         for i in range(1, len(nodeList)):
             pre = nodeList[i - 1]
             cur = nodeList[i]
-            if pre.val > cur.val:
-                misList.append(cur)
+            if cur.val > pre.val: continue
 
+            if first is None:
+                first = pre
 
+            second = cur
 
-    def inorderTravel(self, root, list):
+        if first is None: return
+        temp = first.val
+        first.val = second.val
+        second.val = temp
+
+    def inorderTravel(self, root, res):
         if root is None: return
-        self.inorderTravel(root.left, list)
-        list.append(root)
-        self.inorderTravel(root.right, list)
+        self.inorderTravel(root.left, res)
+        res.append(root)
+        self.inorderTravel(root.right, res)
