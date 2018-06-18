@@ -24,7 +24,9 @@ class Solution(object):
 
         node = root.left
 
-        while node.right is not None: node = node.right
+        while node.right is not None:
+            node = node.right
+
         node.right = root.right
         root.right = root.left
         root.left = None
