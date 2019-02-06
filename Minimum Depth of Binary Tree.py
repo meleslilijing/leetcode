@@ -14,13 +14,11 @@ class Solution(object):
         if root is None:
             return 0
 
-        return self.helper(root)
+        leftDepth, rightDepth = self.minDepth(root.left), self.minDepth(root.right)
 
-    def helper(self, root):
-        if root is None:
-            return 9999  # 一个极大的数
-
-        if root.left is None and root.right is None:
-            return 1
+        if root.left is None:
+            return rightDepth + 1
+        elif root.right is None:
+            return leftDepth + 1
         else:
-            return min(self.helper(root.left), self.helper(root.right)) + 1
+            return min(leftDepth, rightDepth) + 1
