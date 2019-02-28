@@ -48,6 +48,33 @@
  * @return {number[][]}
  */
 var levelOrderBottom = function(root) {
-    
+    if (root === null) {
+        return [];
+    }
+    const res = [];
+    helper(root, res);
+    return res;
 };
 
+function helper(root, res) {
+    const queue = [];
+    queue.push(root);
+
+    while (queue.length > 0) {
+        const buffer = [];
+        const len = queue.length;
+
+        for (let i = 0; i < len; i++) {
+            const node = queue.shift();
+            buffer.push(node.val);
+            
+            if (node.left) {
+                queue.push(node.left)
+            }
+            if (node.right) {
+                queue.push(node.right)
+            }
+        }
+        res.unshift(buffer);
+    }
+}
