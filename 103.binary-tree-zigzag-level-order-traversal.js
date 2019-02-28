@@ -55,9 +55,33 @@ var zigzagLevelOrder = function(root) {
     }
 
     const res = [];
+    const queue = [];
 
-    let curLevel = [];
-    let nextLevel = [];
+    queue.push(root);
+    let isLeft = true;
+
+    while (queue.length > 0) {
+        var buffer = [];
+        const len = queue.length
+        for (var i = 0; i < len; i++) {
+            var node = queue.shift();
+            buffer.push(node.val)
+            if (node.left !== null) {
+                queue.push(node.left);
+            }
+
+            if (node.right !== null) {
+                queue.push(node.right);
+            }
+        }
+
+        if (isLeft) {
+            res.push(buffer);
+        } else {
+            res.push(buffer.reverse());
+        }
+        isLeft = !isLeft;
+    }
 
     return res;
 };
