@@ -49,32 +49,32 @@
  */
 var levelOrderBottom = function(root) {
     if (root === null) {
-      return [];
+        return [];
     }
-
     const res = [];
-    const queue = [];
-
-    queue.push(root);
-
-    while (queue.length > 0) {
-      const buffer = [];
-    
-      const len = queue.length;
-      for (var i = 0; i < len; i++) {
-        const node = queue.shift();
-        buffer.push(node.val);
-
-        if (node.left !== null) {
-          queue.push(node.left);
-        }
-
-        if (node.right !== null) {
-          queue.push(node.right);
-        }
-      }
-      res.unshift(buffer);
-    }
+    helper(root, res);
     return res;
 };
 
+function helper(root, res) {
+    const queue = [];
+    queue.push(root);
+
+    while (queue.length > 0) {
+        const buffer = [];
+        const len = queue.length;
+
+        for (let i = 0; i < len; i++) {
+            const node = queue.shift();
+            buffer.push(node.val);
+            
+            if (node.left) {
+                queue.push(node.left)
+            }
+            if (node.right) {
+                queue.push(node.right)
+            }
+        }
+        res.unshift(buffer);
+    }
+}
