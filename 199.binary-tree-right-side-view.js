@@ -40,6 +40,27 @@
  * @return {number[]}
  */
 var rightSideView = function(root) {
-    
+  if (root === null) {
+    return [];
+  }  
+  var res = [];
+  var queue = [];
+  queue.push(root);
+  while (queue.length > 0) {
+    var size = queue.length;
+    for (var i = 0; i < size; i++) {
+      var node = queue.shift();
+      if (i === size - 1) {
+        res.push(node.val);
+      }
+      if (node.left) {
+        queue.push(node.left)
+      }
+      if (node.right) {
+        queue.push(node.right)
+      }
+    }
+  }
+  return res;
 };
 
