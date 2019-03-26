@@ -56,7 +56,7 @@
  * @return {boolean}
  */
 var wordBreak = function(s, wordDict) {
-    const set = new Set(wordDict);
+    const dict = new Dict(wordDict);
 
     // init dp array
     const dp = [];
@@ -70,7 +70,7 @@ var wordBreak = function(s, wordDict) {
     for (let end = 0; end < s.length; end++) {
         for (let start = 0; start <= end; start++) {
             const subStr = s.substr(start, end - start + 1);
-            if (dp[start] && set.has(subStr)) {
+            if (dp[start] && dict.has(subStr)) {
                 dp[end+1] = true;
                 break;
             }
@@ -80,18 +80,18 @@ var wordBreak = function(s, wordDict) {
     return dp[s.length];
 };
 
-function Set(array) {
-    this.set = {}
+function Dict(array) {
+    this.dict = {}
     array.forEach(value => {
-        this.set[value] = true;
+        this.dict[value] = true;
     });
 }
 
-Set.prototype.has = function (value) {
-    return (typeof value === 'string' || typeof value === 'number') && this.set[value];
+Dict.prototype.has = function (value) {
+    return (typeof value === 'string' || typeof value === 'number') && this.dict[value];
 }
 
-Set.prototype.print = function () {
-    console.log(this.set);
+Dict.prototype.print = function () {
+    console.log(this.dict);
 }
 
