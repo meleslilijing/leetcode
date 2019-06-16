@@ -6,9 +6,15 @@
  * https://leetcode.com/problems/populating-next-right-pointers-in-each-node/description/
  *
  * algorithms
+<<<<<<< Updated upstream
  * Medium (36.84%)
  * Total Accepted:    228.4K
  * Total Submissions: 619.9K
+=======
+ * Medium (36.86%)
+ * Total Accepted:    228.6K
+ * Total Submissions: 620.3K
+>>>>>>> Stashed changes
  * Testcase Example:  '{"$id":"1","left":{"$id":"2","left":{"$id":"3","left":null,"next":null,"right":null,"val":4},"next":null,"right":{"$id":"4","left":null,"next":null,"right":null,"val":5},"val":2},"next":null,"right":{"$id":"5","left":{"$id":"6","left":null,"next":null,"right":null,"val":6},"next":null,"right":{"$id":"7","left":null,"next":null,"right":null,"val":7},"val":3},"val":1}'
  *
  * You are given a perfect binary tree where all leaves are on the same level,
