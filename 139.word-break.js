@@ -56,35 +56,42 @@
  * @return {boolean}
  */
 var wordBreak = function(s, wordDict) {
-  var set = new Set(wordDict);
-  var dp = [];
-  dp[0] = true;
-  for (var i = 1; i <= s.length; i++) {
-    dp[i] = false;
-  }
+    const dict = new Dict(wordDict);
 
-  for (var end = 0; end < s.length; end++) {
-    for (var start = 0; start <= end; start++) {
-      if (dp[start] && set.contain(s.substr(start, end-start+1))) {
-        dp[end+1] = true;
-        break;
-      }
+    // init dp array
+    const dp = [];
+    dp[0] = true;
+    
+    for (let i = 1; i <= s.length; i++) {
+        dp[i] = false;
     }
-  }
-  console.log(dp)
-  return dp[dp.length-1];
+    
+
+    for (let end = 0; end < s.length; end++) {
+        for (let start = 0; start <= end; start++) {
+            const subStr = s.substr(start, end - start + 1);
+            if (dp[start] && dict.has(subStr)) {
+                dp[end+1] = true;
+                break;
+            }
+        }
+    }
+
+    return dp[s.length];
 };
 
-function Set(arr) {
-  this.set = {}
-  arr.forEach(i => {
-    this.set[i] = i
-  });
+function Dict(array) {
+    this.dict = {}
+    array.forEach(value => {
+        this.dict[value] = true;
+    });
 }
 
-Set.prototype.contain = function (v) {
-  if (typeof v === 'string' && this.set[v] !== undefined && this.set[v] !== null) {
-    return true;
-  }
-  return false;
+Dict.prototype.has = function (value) {
+    return (typeof value === 'string' || typeof value === 'number') && this.dict[value];
 }
+
+Dict.prototype.print = function () {
+    console.log(this.dict);
+}
+
